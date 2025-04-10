@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+      # Activate the environment
+      - source /home/geos/nodevenv/frontend/22/bin/activate && cd /home/geos/frontend
+      # Run the build command
+      - npm run build
+      - touch tmp/restart.txt

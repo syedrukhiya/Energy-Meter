@@ -1,0 +1,12 @@
+services:
+  vite:
+    build:
+      context: .
+      dockerfile: Dockerfile.vite # Ensure you have a Dockerfile for Vite
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules # Updated to store node_modules in local volume
+    ports:
+      - "5173:5173" # Adjust this to your Vite server port
+    environment:
+      HOST: 0.0.0.0 # Make sure Vite listens on all interfaces
